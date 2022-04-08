@@ -6,6 +6,9 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
+
+	// The k8s.io/client-go/plugin/pkg/client/auth import ensures that client-go can authenticate with Kubernetes clusters on cloud providers.
+	// See https://krew.sigs.k8s.io/docs/developer-guide/develop/best-practices/
 	_ "k8s.io/client-go/plugin/pkg/client/auth"
 	"k8s.io/client-go/tools/clientcmd"
 )

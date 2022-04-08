@@ -1,0 +1,9 @@
+# npm
+node_modules
+
+# go
+c.out
+coverage.out
+coverage.html
+kubectl-pdborked
+**/mock_*.go

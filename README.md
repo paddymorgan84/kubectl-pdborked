@@ -10,7 +10,7 @@
 ## Introduction
 
 ![Go](https://github.com/paddymorgan84/kubectl-pdborked/workflows/kubectl-pdborked/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/paddymorgan84/fpl)](https://goreportcard.com/report/github.com/paddymorgan84/kubectl-pdborked)
+[![Go Report Card](https://goreportcard.com/badge/github.com/paddymorgan84/kubectl-pdborked)](https://goreportcard.com/report/github.com/paddymorgan84/kubectl-pdborked)
 
 `kubectl-pdborked` is a kubectl plugin extension to identify PDBs with no allowed disruptions.
 

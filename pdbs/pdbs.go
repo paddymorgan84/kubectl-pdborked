@@ -2,8 +2,9 @@ package pdbs
 
 import (
 	"context"
-	"fmt"
+	"sort"
 
+	"github.com/paddymorgan84/kubectl-pdborked/ui"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 
@@ -15,7 +16,7 @@ import (
 
 // GetBorkedPdbs will return any pod disruption budgets that currently have zero disruptions allowed
 // namespace: The namespace you wish to filter on. This can be left empty, in which case the search will span the entire cluster.
-func GetBorkedPdbs(namespace string) error {
+func GetBorkedPdbs(namespace string, renderer ui.Renderer) error {
 	loadingRules := clientcmd.NewDefaultClientConfigLoadingRules()
 	kubeConfig := clientcmd.NewNonInteractiveDeferredLoadingClientConfig(
 		loadingRules,
@@ -32,15 +33,14 @@ func GetBorkedPdbs(namespace string) error {
 	}
 
 	results, err := clientset.PolicyV1().PodDisruptionBudgets(namespace).List(context.Background(), metav1.ListOptions{})
+
+	sort.Slice(results.Items, func(i, j int) bool { return results.Items[i].Namespace < results.Items[j].Namespace })
+
 	if err != nil {
 		return err
 	}
 
-	for _, pdb := range results.Items {
-		if pdb.Status.DisruptionsAllowed == 0 {
-			fmt.Println(pdb.Name)
-		}
-	}
+	renderer.Render(results.Items)
 
 	return nil
 }

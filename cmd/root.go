@@ -4,6 +4,7 @@ import (
 	"os"
 
 	"github.com/paddymorgan84/kubectl-pdborked/pdbs"
+	"github.com/paddymorgan84/kubectl-pdborked/ui"
 	"github.com/spf13/cobra"
 )
 
@@ -13,7 +14,7 @@ var pdborkedCmd = &cobra.Command{
 	Use:   "pdborked",
 	Short: "A kubectl plugin extension to identify PDBs with no allowed disruptions",
 	RunE: func(cmd *cobra.Command, args []string) error {
-		err := pdbs.GetBorkedPdbs(namespace)
+		err := pdbs.GetBorkedPdbs(namespace, new(ui.TableRenderer))
 
 		if err != nil {
 			return err

@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "husky": "^8.0.1",
-    "lint-staged": "^12.4.1"
+    "lint-staged": "^12.4.2"
   },
   "scripts": {
     "spell-check": "mdspell -arn --en-gb \"{infrastructure,scripts}/**/*.md\" \"!**/node_modules/**/*.md\" README.md",

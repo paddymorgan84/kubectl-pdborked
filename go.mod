@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/jedib0t/go-pretty/v6 v6.3.3
-	github.com/spf13/cobra v1.4.0
+	github.com/spf13/cobra v1.5.0
 	k8s.io/api v0.24.2
 	k8s.io/apimachinery v0.24.2
 	k8s.io/client-go v0.24.2

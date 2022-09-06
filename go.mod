@@ -3,7 +3,7 @@ module github.com/paddymorgan84/kubectl-pdborked
 go 1.18
 
 require (
-	github.com/jedib0t/go-pretty/v6 v6.3.7
+	github.com/jedib0t/go-pretty/v6 v6.3.8
 	github.com/spf13/cobra v1.5.0
 	k8s.io/api v0.25.0
 	k8s.io/apimachinery v0.25.0

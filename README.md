@@ -16,7 +16,7 @@
 
 ## Pre-requisites
 
-- [Go version 1.17 or higher](https://golang.org/dl/)
+- [Go version 1.19 or higher](https://golang.org/dl/)
 
 ## Installation
 

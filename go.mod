@@ -6,7 +6,7 @@ require (
 	github.com/jedib0t/go-pretty/v6 v6.4.7
 	github.com/spf13/cobra v1.7.0
 	k8s.io/api v0.28.1
-	k8s.io/apimachinery v0.28.1
+	k8s.io/apimachinery v0.28.2
 	k8s.io/client-go v0.28.1
 )
 
